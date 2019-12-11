@@ -1,0 +1,18 @@
+2
+circle : ppt_data/cid
+square : ppt_data/sid
+
+2
+circle square ppt_data/c2s
+circle circle ppt_data/c2c
+
+3
+0 : circle_0
+1 : square_1
+2 : circle_3
+
+
+0 1
+1 3
+0 3
+

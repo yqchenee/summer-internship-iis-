@@ -1,0 +1,21 @@
+2
+circle : test_case/m_circle_id
+square : test_case/m_square_id
+
+2
+circle square test_case/m_c2s
+circle circle test_case/m_c2c 
+
+5
+0 : circle_0
+1 : circle_1
+2 : square_2 square_3
+3 : circle_4
+4 : circle_5
+
+0 1
+1 2
+1 3
+2 4
+3 4
+4 5

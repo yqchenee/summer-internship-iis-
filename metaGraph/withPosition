@@ -1,0 +1,21 @@
+2
+u : withPosition/uids
+b : withPosition/bids
+
+2
+u b withPosition/upb
+u u withPosition/uu 
+
+5
+0 : u_0
+1 : u_1
+2 : b_2 b_3
+3 : u_4
+4 : b_5
+
+0 1
+1 2
+1 3
+2 4
+3 4
+4 5

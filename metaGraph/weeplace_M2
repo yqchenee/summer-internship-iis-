@@ -1,0 +1,15 @@
+2
+user : weeplace/uids
+business : weeplace/bids
+
+2
+user user weeplace/u_u
+user business weeplace/u_b
+
+3
+0 : user_0
+1 : user_1
+2 : business_2
+
+0 1
+1 2

@@ -1,0 +1,15 @@
+2
+user : 200k/uids
+business : 200k/bids
+
+2
+user user 200k/user_social.txt
+user business 200k/upb
+
+3
+0 : user_0
+1 : user_1
+2 : business_2
+
+0 1
+1 2

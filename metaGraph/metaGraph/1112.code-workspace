@@ -1,0 +1,27 @@
+{
+	"folders": [
+		{
+			"path": "/home/cyq/sinica_summer2019/metagraph/FMG"
+		},
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"files.associations": {
+			"iostream": "cpp",
+			"ostream": "cpp",
+			"tuple": "cpp",
+			"array": "cpp",
+			"initializer_list": "cpp",
+			"utility": "cpp",
+			"istream": "cpp",
+			"fstream": "cpp",
+			"*.tcc": "cpp",
+			"sstream": "cpp",
+			"type_traits": "cpp",
+			"iosfwd": "cpp",
+			"iomanip": "cpp"
+		}
+	}
+}

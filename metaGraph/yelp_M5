@@ -1,0 +1,20 @@
+3
+user : 200k/uids
+busi : 200k/bids
+city : 200k/cityids
+
+3
+user busi 200k/upb
+busi city 200k/bid_city
+user user 200k/user_social.txt
+
+4
+0 : user_0
+1 : busi_1
+2 : city_2
+3 : busi_3
+
+0 1
+1 2
+2 3
+

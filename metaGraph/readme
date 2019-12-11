@@ -1,0 +1,141 @@
+Program introduction :
+	1. Run : construct metaGraph and output each user's topK simularity score to business and 
+		output to  /offline/query_result/  __outFile__ specify in RUN_Query_Files ,
+		ps : if __topK__ in RUN_Query_Files is 0 => output the entire simularity matrix 	
+	
+	( QF = Query_File )
+	( outFile goes to /query_result/ __outFile__ )
+	
+	2. BQT : query offline matrix by BQT_Query_Files, and output topK user to __outFile__ in QF.
+		ps : if __time__ in QF = -1 => no query with time 
+
+	3. BQT_kU : query by given_Business and time ,  output k_user's total score.
+		ps : if __time__ in QF = -1 => no query with time
+	
+	4. online_prunning : same as BQT , but using prunning algorithm.	 
+		ps : if __time__ in QF = -1 => no query with time
+
+Make :
+	make clean
+	make
+
+Run Program :
+	1. ./Run < infoFile > < RUN__Query_Files >
+	2. ./query_BQT < infoFile > < offline_sim_mat_File > < BQT_Query_Files >
+	3. ./query_BQT_kU < infoFile > < offline_sim_mat_File > < BQT_kU_Query_Files >
+	4. ./online_prunning < infoFile > < offline_sim_mat_File > < Online_Prunning_Query_Files >
+
+infoFile : ( depict your metaGraph ) 
+	# of id_file
+	type_a 		a_id_file_dir ( in data/ )  
+	type_b		b_id_file_dir
+	......
+	
+	# of relation file
+	type_a  type_b  a2b_file_dir
+	type_c  type_d  c2d_file_dir
+	......
+
+	# of metaGraph level (ex: K) 
+	( format => level : type_ID )
+	0 : type_a_0
+	1 : type_b_1 type_c_2
+	2 : type_d_3
+	3 : type_e_4 type_f_5
+	......
+	K-1 : typeG_20
+
+	( metaGraph Path , ex: _idx _idy ) 	
+	0 1
+ 	0 2
+	1 3
+	2 3
+	3 4
+	3 5
+	.....
+	18 20
+	19 20
+
+------------------------------------------------
+	QUERY_FILE ( in /query_input )
+------------------------------------------------
+RUN_Query_File	
+	< unsigned topK > ( = 0 , all output )
+	< string outFile >
+
+BQT_Query_File
+	< int time > ( = -1 , no query by time )
+	< unsigned topK >
+	< unsigned Q_user > ( query_user id )
+	< string businessFile >
+	< string outFile >
+	[ float  threshold_dist ] (default = 0 )
+
+BQT_kU_Query_File
+	< int time > ( = -1 , no query by time )
+	< unsigned Q_user >
+	< string businessFile >
+ 	< string k_userFile >
+	< string outFile >
+	[ float threshold_dist ] ( default = 0 )
+
+Online_Prunning_Query_File ( same as BQT )
+	time
+	topK
+	Q_user
+	businessFile
+	outFile
+	[threshold_dist]
+
+-----------------------------------------------
+	DATA_FILE ( in /data )
+-----------------------------------------------
+ID_File
+	< unsigned id0 >
+	< unsigned id1 >
+	< .............>
+	< unsigned udN >
+
+Rel_File ( you can choose one of four formats )
+	default ts = 0 , te = UINT_MAX , w = 1
+	first format :
+		< unsigned type1_idx > < unsigned type2_idy >
+		......
+	second format : 
+		< unsigned type1_idx > < unsigned type2_idy > < unsigned weight >
+		......
+	third format :
+		< unsigned type1_idx > < unsigned type2_idy > < unsigned time_start > < unsigned time_end >
+		......
+	forth format :
+		< unsigned type1_idx > < unsigned type2_idy > < unsigned time_start > < unsigned time_end > < unsigned weight >
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
